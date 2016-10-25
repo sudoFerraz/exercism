@@ -34,3 +34,6 @@ class Clock(object):
     def add(self, minute):
         pass
 
+    def __eq__(self, other):
+        if self.relogio == other.relogio:
+            return True
