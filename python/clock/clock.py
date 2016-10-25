@@ -5,28 +5,32 @@
         self.minute = minute
 
 """
+class Clock(object):
 
-def Clock(hour, minute):
-    if hour >= 24:
-        hour = hour % 24
-    if hour < 0:
-        hour = hour % 24
+    def __str__(self):
+        return self.relogio
 
-    if minute > 59 or minute < 0:
-        divide = minute / 60
-        hour = hour + divide
-        hour = hour % 24
-
-    if hour < 10:
-        hour = format(hour, "02")
-
-
-    if minute < 10 or minute > 59:
-        minute = minute % 60
-        minute = format(minute, "02")
+    def __init__(self, hour, minute):
+        if hour >= 24:
+            hour = hour % 24
+        if hour < 0:
+            hour = hour % 24
     
-    relogio = str(hour) + ':' + str(minute)
-    return relogio
+        if minute > 59 or minute < 0:
+            divide = minute / 60
+            hour = hour + divide
+            hour = hour % 24
+    
+        if hour < 10:
+            hour = format(hour, "02")
+    
+    
+        if minute < 10 or minute > 59:
+            minute = minute % 60
+            minute = format(minute, "02")
+        
+        self.relogio = str(hour) + ':' + str(minute)
 
-def add(minute):
-    pass
+    def add(self, minute):
+        pass
+
